@@ -10,8 +10,8 @@ import com.go2climb.go2climbapi.shared.exception.ResourceNotFoundException;
 import com.go2climb.go2climbapi.shared.exception.ResourceValidationException;
 import org.springframework.http.ResponseEntity;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;

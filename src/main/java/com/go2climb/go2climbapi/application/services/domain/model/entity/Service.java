@@ -3,9 +3,9 @@ package com.go2climb.go2climbapi.application.services.domain.model.entity;
 import com.go2climb.go2climbapi.application.agencies.domain.model.entity.Agency;
 import lombok.*;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.util.Date;
 
 @Getter
