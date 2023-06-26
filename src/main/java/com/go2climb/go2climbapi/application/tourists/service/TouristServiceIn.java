@@ -84,6 +84,16 @@ public class TouristServiceIn implements TouristService {
     }
 
     @Override
+    public Tourist getInfoUserByName(String name) {
+        return touristRepository.findByName(name);
+    }
+
+    @Override
+    public Tourist getInfoUserByEmailAndPassword(String email, String password) {
+        return touristRepository.findByEmailAndPassword(email,password);
+    }
+
+    @Override
     public ResponseEntity<?> delete(Long touristId) {
         return touristRepository.findById(touristId).map(
                 tourist -> {

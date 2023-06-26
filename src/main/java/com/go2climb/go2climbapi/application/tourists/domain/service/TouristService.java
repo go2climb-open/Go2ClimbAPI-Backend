@@ -22,5 +22,11 @@ public interface TouristService {
     // Get info user by id
     Tourist getInfoUserById(Long touristId);
 
+    // Get info user by Name
+    Tourist getInfoUserByName(String name);
+
+    //Get info by Email and Password
+    Tourist getInfoUserByEmailAndPassword(String email, String password);
+
     ResponseEntity<?> delete(Long touristId);
 }

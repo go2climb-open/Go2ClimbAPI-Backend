@@ -17,8 +17,9 @@ public interface AgencyService {
     //GET BY EMAIL
     Agency getByEmail(String email);
 
-    //GET BY passwword
+    //GET BY password
     Agency getByPassword(String name);
+
     //GET BY NAME
     Agency getByName(String name);
     //GET BY LOCATION
