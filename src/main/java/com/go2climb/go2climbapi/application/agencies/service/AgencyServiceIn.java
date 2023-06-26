@@ -39,6 +39,26 @@ public class AgencyServiceIn implements AgencyService {
     }
 
     @Override
+    public Agency getByEmail(String email) {
+        return agencyRepository.findByEmail(email);
+    }
+
+    @Override
+    public Agency getByPassword(String password) {
+        return agencyRepository.findByPassword(password);
+    }
+
+    @Override
+    public Agency getByName(String name) {
+        return agencyRepository.findByName(name);
+    }
+
+    @Override
+    public Agency getByLocation(String location) {
+        return agencyRepository.findByLocation(location);
+    }
+
+    @Override
     public Agency create(Agency agency){
         Set<ConstraintViolation<Agency>> violations = validator.validate(agency);
 
