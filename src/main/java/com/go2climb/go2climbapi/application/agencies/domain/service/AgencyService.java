@@ -20,6 +20,8 @@ public interface AgencyService {
     //GET BY password
     Agency getByPassword(String name);
 
+    Agency getByEmailAndPassword(String email,String password);
+
     //GET BY NAME
     Agency getByName(String name);
     //GET BY LOCATION

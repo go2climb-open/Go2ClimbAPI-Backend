@@ -54,7 +54,7 @@ public class TouristController {
         return mapper.toResource(touristService.getInfoUserById(touristId));
     }
 
-    // GET BY NAME
+    // funciona GET BY NAME
     @Operation(summary = "Get Tourist by Name", description = "Get an tourist by Name")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Tourist found",
@@ -66,7 +66,7 @@ public class TouristController {
         return mapper.toResource(touristService.getInfoUserByName(touristName));
     }
 
-    // GET BY EMAIL AND PASSWORD
+    // funciona GET BY EMAIL AND PASSWORD
     @Operation(summary = "Get Tourist by email and password", description = "Get an tourist by email and password")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Tourist found",

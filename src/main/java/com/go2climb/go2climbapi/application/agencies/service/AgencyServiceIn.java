@@ -49,6 +49,12 @@ public class AgencyServiceIn implements AgencyService {
     }
 
     @Override
+    public Agency getByEmailAndPassword(String email, String password) {
+        return agencyRepository.findByEmailAndPassword(email,password);
+    }
+
+
+    @Override
     public Agency getByName(String name) {
         return agencyRepository.findByName(name);
     }

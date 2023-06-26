@@ -77,16 +77,16 @@ public class AgencyController {
         return mapper.toResource(agencyService.getByEmail(agencyEmail));
     }
 
-    // funciona GET BY PASSWORD
-    @Operation(summary = "Get Agency by Password", description = "Get an agency by Password")
+    // funciona GET BY PASSWORD AND EMAIL
+    @Operation(summary = "Get Agency by email and password", description = "Get an agency by email and password")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Password found",
+            @ApiResponse(responseCode = "200", description = "Tourist found",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = AgencyResource.class))})
     })
-    @GetMapping("password/{agencyPassword}")
-    public AgencyResource getInfoAgencyByPassword(@PathVariable("agencyPassword") String agencyPassword) {
-        return mapper.toResource(agencyService.getByPassword(agencyPassword));
+    @GetMapping("email&password/{agencyEmail}/{agencyPassword}")
+    public AgencyResource getInfoAgencyByEmailAndPassword(@PathVariable("agencyEmail") String agencyEmail, @PathVariable("agencyPassword") String agencyPassword) {
+        return mapper.toResource(agencyService.getByEmailAndPassword(agencyEmail,agencyPassword));
     }
 
     // funciona GET BY LOCATION

@@ -9,6 +9,7 @@ public interface AgencyRepository extends JpaRepository<Agency, Long> {
     Agency findByEmail(String email);
     Agency findByPhoneNumber(int phoneNumber);
     Agency findByName(String name);
+    Agency findByEmailAndPassword(String email, String password);
     Agency findByPassword(String password);
     Agency findByLocation(String location);
 }
