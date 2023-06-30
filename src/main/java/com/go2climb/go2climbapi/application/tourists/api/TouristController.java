@@ -42,7 +42,7 @@ public class TouristController {
         return mapper.modelListPage(touristService.getAll(), pageable);
     }
 
-    //funciona
+    //funciona GET BY ID
     @Operation(summary = "Get Tourist by Id", description = "Get an tourist by Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Tourist found",
@@ -53,6 +53,35 @@ public class TouristController {
     public TouristResource getInfoUserById(@PathVariable Long touristId) {
         return mapper.toResource(touristService.getInfoUserById(touristId));
     }
+
+    // funciona GET BY NAME
+    @Operation(summary = "Get Tourist by Name", description = "Get an tourist by Name")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Tourist found",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = TouristResource.class))})
+    })
+    @GetMapping("name/{touristName}")
+    public TouristResource getInfoUserByName(@PathVariable("touristName") String touristName) {
+        return mapper.toResource(touristService.getInfoUserByName(touristName));
+    }
+
+    // funciona GET BY EMAIL AND PASSWORD
+    @Operation(summary = "Get Tourist by email and password", description = "Get an tourist by email and password")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Tourist found",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = TouristResource.class))})
+    })
+    @GetMapping("email&password/{touristEmail}/{touristPassword}")
+    public TouristResource getInfoUserByEmailAndPassword(@PathVariable("touristEmail") String touristEmail, @PathVariable("touristPassword") String touristPassword) {
+        return mapper.toResource(touristService.getInfoUserByEmailAndPassword(touristEmail,touristPassword));
+    }
+
+
+
+
+
 
     //funciona
     @Operation(summary = "Create Tourist", description = "Create tourist in the database.")

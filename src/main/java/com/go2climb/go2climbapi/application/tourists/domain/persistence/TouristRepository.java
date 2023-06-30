@@ -8,4 +8,10 @@ import org.springframework.stereotype.Repository;
 public interface TouristRepository  extends JpaRepository<Tourist, Long> {
     Tourist findByEmail(String email);
     Tourist findByPhoneNumber(int phoneNumber);
+
+    Tourist findByName(String name);
+    Tourist findByPassword(String password);
+
+    Tourist findByEmailAndPassword(String email, String password);
+
 }

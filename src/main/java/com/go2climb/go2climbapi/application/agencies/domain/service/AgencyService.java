@@ -14,6 +14,19 @@ public interface AgencyService {
 
     Page<Agency> getAll(Pageable pageable);
 
+    //GET BY EMAIL
+    Agency getByEmail(String email);
+
+    //GET BY password
+    Agency getByPassword(String name);
+
+    Agency getByEmailAndPassword(String email,String password);
+
+    //GET BY NAME
+    Agency getByName(String name);
+    //GET BY LOCATION
+    Agency getByLocation(String location);
+
     // Create a new agency
     Agency create(Agency agency);
 
